@@ -1,3 +1,15 @@
 body {
   background-color: cornsilk;
 }
+.dem-body {
+  position: relative;
+}
+.dem-body::before {
+  background-image: url("green-background.jpg");
+  width: 100%;
+  height: auto;
+  opacity: 0.6;
+}
+.dem-content {
+  position: relative;
+}
