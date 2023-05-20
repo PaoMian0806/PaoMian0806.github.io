@@ -1,15 +1,38 @@
 body {
   background-color: cornsilk;
+  background-image: linear-gradient(
+      180deg,
+      #00204333 0%,
+      #02172e75 70%,
+      #02172e 100%
+    ),
+    url("green-background.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  font-size: 0.81rem;
 }
-.dem-body {
+
+.content {
   position: relative;
 }
-.dem-body::before {
-  background-image: url("green-background.jpg");
-  width: 100%;
-  height: auto;
-  opacity: 0.6;
+.content p {
+  color: white;
 }
-.dem-content {
-  position: relative;
+.content h1 {
+  font-size: 3.675rem;
+  font-family: "DOSGothic", sans-serif;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.865rem;
+}
+
+.content hr.style-one {
+  border: 0;
+  height: 0.125em;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0.25)
+  );
 }
