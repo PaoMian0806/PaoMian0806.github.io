@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
+
+/* * {
+  animation: fadeIn 1.1s;
+} */
+body {
+  background-color: rgb(39, 39, 39);
+  background-image: linear-gradient(
+      180deg,
+      #00204368 20%,
+      #02172e75 70%,
+      #02172e 100%
+    ),
+    url("green-background.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-width: 75vw;
+  font-size: 0.81rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.content {
+  z-index: -1;
+  position: relative;
+  padding: 2em;
+}
+.content p {
+  color: white;
+  animation: fadeIn 1.1s;
+}
+.content h1 {
+  font-size: 3.675rem;
+  font-family: "DOSGothic", sans-serif;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.865rem;
+  animation: fadeIn 1.1s;
+}
+
+hr.style-one {
+  border: 0;
+  height: 0.125em;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0.25)
+  );
+}
+
+.window {
+  margin-bottom: 1em;
+}
+
+/* NAVBAR */
+
+*nav-body {
+  font-size: 16px;
+  font-family: "Work Sans", sans-serif;
+  color: #f1f1f1;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: rgba(20, 20, 20, 0.739);
+  backdrop-filter: blur(12px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 4rem;
+  transition: 350ms cubic-bezier(0.65, 0, 0.35, 1);
+  animation: fadeIn 1.1s;
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.565);
+}
+
+.navbar.scrolled .nav-link,
+.navbar.scrolled #brand {
+  color: #f1f1f1;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-link,
+#brand {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-family: "Abel", sans-serif;
+  text-transform: uppercase;
+  transition: 350ms cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.navbar:before {
+  content: "";
+  position: absolute;
+  transition-property: width, height;
+  transform-style: linear;
+  bottom: 0;
+  left: 0;
+  width: 15px;
+  height: 100%;
+  transform: scaleX(1);
+  transition-delay: 0.5s, 1s;
+  background: #66bb6a;
+  transition-duration: 0.5s;
+}
+
+.navbar:hover:before {
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  transition-property: height, width;
+  transition-delay: 0.5s, 1s;
+  transition-duration: 0.5s;
+}
+
+/* =======================================
+More General Styling
+======================================= */
+.hero {
+  min-height: 100vh;
+  background-image: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1752&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+section {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.section-1 {
+  background-color: #111;
+}
+
+.section-2 {
+  background-color: #222;
+}
+
+/* SOCIAL MEDIA */
+
+/* Demo */
+.social-icons-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* min-height: 25vh; */
+}
+/* Color Variables */
+/* Social Icon Mixin */
+/* Social Icons */
+.social-icons {
+  display: flex;
+}
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 2.5rem;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.social-icon:hover {
+  color: #fff;
+}
+.social-icon:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -150%);
+}
+.social-icon:active {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5) inset;
+}
+.social-icon--twitter {
+  background: #2b97f1;
+  color: #fff;
+}
+.social-icon--twitter .tooltip {
+  background: #2b97f1;
+  color: currentColor;
+}
+.social-icon--twitter .tooltip:after {
+  border-top-color: #2b97f1;
+}
+.social-icon--discord {
+  background: #7289da;
+  color: #fff;
+}
+.social-icon--discord .tooltip {
+  background: #7289da;
+  color: currentColor;
+}
+.social-icon--discord .tooltip:after {
+  border-top-color: #7289da;
+}
+.social-icon--facebook {
+  background: #3b5a9b;
+  color: #fff;
+}
+.social-icon--facebook .tooltip {
+  background: #3b5a9b;
+  color: currentColor;
+}
+.social-icon--facebook .tooltip:after {
+  border-top-color: #3b5a9b;
+}
+.social-icon--instagram {
+  background: #527fa6;
+  color: #fff;
+}
+.social-icon--instagram .tooltip {
+  background: #527fa6;
+  color: currentColor;
+}
+.social-icon--instagram .tooltip:after {
+  border-top-color: #527fa6;
+}
+.social-icon--github {
+  background: #000;
+  color: #fff;
+}
+.social-icon--github .tooltip {
+  background: #000;
+  color: currentColor;
+}
+.social-icon--github .tooltip:after {
+  border-top-color: #000;
+}
+.social-icon i {
+  position: relative;
+  top: 1px;
+}
+/* Tooltips */
+.tooltip {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 0.8rem 1rem;
+  border-radius: 40px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  text-transform: uppercase;
+  transform: translate(-50%, -100%);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+.tooltip:after {
+  display: block;
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  content: "";
+  border: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: transparent;
+  transform: translate(-50%, 100%);
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-color: rgb(39, 39, 39);
+    background-image: linear-gradient(
+        180deg,
+        #00204368 20%,
+        #02172e75 70%,
+        #02172e 100%
+      ),
+      url("green-background-mobile.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top center;
+    /* display: inline-block; */
+  }
+  .content {
+    padding: 2em;
+  }
+  .content h1 {
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  .navbar {
+    padding-inline: 1.8rem;
+  }
+  .social-icons-body {
+    /* max-width: 50vh; */
+    max-height: 20vh;
+    position: relative;
+  }
+  .social-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.dot-navigation {
+  /* Center the content */
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  /* Reset styles */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dot-navigation__item {
+  /* Rounded border */
+  border-radius: 9999px;
+  height: 0.75rem;
+  width: 0.75rem;
+
+  /* Inactive dot */
+  background-color: transparent;
+  border: 1px solid #d1d5db;
+
+  /* OPTIONAL: Spacing between dots */
+  margin: 0 0.25rem;
+}
+
+/* Active dot */
+.dot-navigation__item--active {
+  background-color: #d1d5db;
+}
